@@ -38,6 +38,8 @@ public class NetflixTarifrechnerSpringApplication implements CommandLineRunner {
 
 		if (args.length == 2) {
 			double endPreis = this.netflixTarifRechnerService.calculatePreis(new Kunde(args[0], Integer.parseInt(args[1])));
+
+			logger.info("Preis am Ende: {}", endPreis);
 		} else {
 			logger.info("Bitte geben Sie den Namen und das Alter des Kunden an.");
 		}
