@@ -2,9 +2,9 @@ package com.example.netflix.tarif;
 
 import java.util.logging.Logger;
 
-public class App {
+public class NetflixTarifrechnerApplication {
 
-    private static final Logger logger = Logger.getLogger(App.class.getName());
+    private static final Logger logger = Logger.getLogger(NetflixTarifrechnerApplication.class.getName());
 
     public static void main(String[] args) {
         logger.info("START: APPLICATION");

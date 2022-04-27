@@ -37,7 +37,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>com.example.netflix.tarif.App</mainClass>
+                  <mainClass>com.example.netflix.tarif.NetflixTarifrechnerApplication</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
