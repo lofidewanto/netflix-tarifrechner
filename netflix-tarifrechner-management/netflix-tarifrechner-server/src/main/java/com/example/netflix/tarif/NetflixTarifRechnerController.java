@@ -18,7 +18,7 @@ public class NetflixTarifRechnerController {
     }
 
     @GetMapping(NetflixTarifRechnerEndpoint.TARIFRECHNER + "/{name}/{alter}")
-    public String greet(@PathVariable String name, @PathVariable int alter) {
+    public String getTarif(@PathVariable String name, @PathVariable int alter) {
         double endPreis = netflixTarifRechnerService.calculatePreis(new Kunde(name, alter));
         
         logger.info("Preis am Ende: {}", endPreis);
