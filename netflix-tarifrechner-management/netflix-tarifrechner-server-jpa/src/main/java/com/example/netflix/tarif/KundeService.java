@@ -9,7 +9,7 @@ public class KundeService {
     private final KundeRepository kundeRepository;
 
     public KundeService(KundeRepository kundeRepository) {
-       this.kundeRepository = kundeRepository;
+        this.kundeRepository = kundeRepository;
     }
 
     @Transactional
