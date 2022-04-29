@@ -17,12 +17,14 @@ class KundeServiceTest {
     
     @Test
     void create_Kunde() {
-        Kunde createKunde = kundeService.createKunde(new Kunde("Max", 18));
+        Kunde createKunde1 = kundeService.createKunde(new Kunde("Max", 18));
+        Kunde createKunde2 = kundeService.createKunde(new Kunde("Muster", 30));
 
-        assertEquals("Max", createKunde.getName());
+        assertEquals("Max", createKunde1.getName());
+        assertEquals("Muster", createKunde2.getName());
 
         long count = kundeRepository.count();
 
-        assertEquals(1, count);
+        assertEquals(2, count);
     }
 }
