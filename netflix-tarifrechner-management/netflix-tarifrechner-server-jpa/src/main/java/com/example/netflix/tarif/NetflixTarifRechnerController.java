@@ -30,7 +30,7 @@ public class NetflixTarifRechnerController {
         logger.info("Preis am Ende: {}", endPreis);
         logger.info("Kunde: {}", createdKunde);
 
-        TarifDto tarifDto = new TarifDto(endPreis);
+        TarifDto tarifDto = new TarifDto(endPreis, createdKunde.getName());
 
         return tarifDto;
     }

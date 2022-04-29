@@ -23,7 +23,7 @@ public class NetflixTarifRechnerController {
         
         logger.info("Preis am Ende: {}", endPreis);
 
-        TarifDto tarifDto = new TarifDto(endPreis);
+        TarifDto tarifDto = new TarifDto(endPreis, name);
 
         return tarifDto;
     }
