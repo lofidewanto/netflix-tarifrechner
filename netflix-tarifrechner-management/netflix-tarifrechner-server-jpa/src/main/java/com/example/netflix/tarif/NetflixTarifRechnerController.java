@@ -28,6 +28,7 @@ public class NetflixTarifRechnerController {
         double endPreis = netflixTarifRechnerService.calculatePreis(createdKunde);
         
         logger.info("Preis am Ende: {}", endPreis);
+        logger.info("Kunde: {}", createdKunde);
 
         TarifDto tarifDto = new TarifDto(endPreis);
 

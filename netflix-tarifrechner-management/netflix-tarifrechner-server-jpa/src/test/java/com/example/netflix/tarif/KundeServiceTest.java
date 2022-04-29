@@ -11,12 +11,18 @@ class KundeServiceTest {
 
     @Autowired
     KundeService kundeService;
-    private Kunde createKunde;
+
+    @Autowired
+    KundeRepository kundeRepository;
     
     @Test
     void create_Kunde() {
         Kunde createKunde = kundeService.createKunde(new Kunde("Max", 18));
 
         assertEquals("Max", createKunde.getName());
+
+        long count = kundeRepository.count();
+
+        assertEquals(1, count);
     }
 }

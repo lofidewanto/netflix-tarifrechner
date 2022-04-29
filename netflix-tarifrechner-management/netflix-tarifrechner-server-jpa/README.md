@@ -1,6 +1,6 @@
 # Getting Started
-
-webapp
+Webapp: http://localhost:8080/netflix/v1/tarifrechner/lofi/20
+H2 Console: http://localhost:8080/netflix/h2-console/
 
 ### Reference Documentation
 For further reference, please consider the following sections:
