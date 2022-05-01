@@ -27,7 +27,7 @@ class NetflixTarifrechnerRestControllerTest {
 	int port;
 
 	@Autowired
-	private WebClient.Builder webClientBuilder;
+	WebClient.Builder webClientBuilder;
 
 	@Test
 	void webClientAufruf() {
