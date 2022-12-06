@@ -6,7 +6,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>netflix-tarifrechner-template</module>
         <module>netflix-tarifrechner-oldschool</module>
         <module>netflix-tarifrechner-spring</module>
+        <module>netflix-tarifrechner-management</module>
     </modules>
 </project>
