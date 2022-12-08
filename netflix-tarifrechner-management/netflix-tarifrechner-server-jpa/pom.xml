@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>netflix-tarifrechner-spring</artifactId>
+	<artifactId>netflix-tarifrechner-server-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>netflix-tarifrechner-spring</name>
+	<name>netflix-tarifrechner-server-jpa</name>
 	<description>Netflix Tarifrechner Spring Boot Demo</description>
 	<properties>
 		<java.version>11</java.version>
