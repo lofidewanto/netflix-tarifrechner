@@ -10,5 +10,6 @@
         <module>netflix-tarifrechner-server</module>
         <module>netflix-tarifrechner-server-jpa</module>
         <module>netflix-tarifrechner-server-jpa-web</module>
+        <module>netflix-tarifrechner-server-jpa-web-security</module>
     </modules>
 </project>
