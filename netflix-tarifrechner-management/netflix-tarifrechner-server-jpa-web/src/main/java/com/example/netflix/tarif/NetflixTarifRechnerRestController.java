@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class NetflixTarifRechnerController {
+public class NetflixTarifRechnerRestController {
 
-    private Logger logger = LoggerFactory.getLogger(NetflixTarifRechnerController.class);
+    private Logger logger = LoggerFactory.getLogger(NetflixTarifRechnerRestController.class);
 
     private final NetflixTarifRechnerService netflixTarifRechnerService;
 
     private final KundeService kundeService;
 
-    public NetflixTarifRechnerController(NetflixTarifRechnerService netflixTarifRechnerService, KundeService kundeService) {
+    public NetflixTarifRechnerRestController(NetflixTarifRechnerService netflixTarifRechnerService, KundeService kundeService) {
         this.netflixTarifRechnerService = netflixTarifRechnerService;
         this.kundeService = kundeService;
     }
