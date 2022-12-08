@@ -15,16 +15,19 @@ public class NetflixTarifRechnerWebController {
 
     @GetMapping("/tarif-rechner")
     public String greetingForm(Model model) {
-        model.addAttribute("kunde", new Kunde(null, 0));
+        Kunde tempKunde = new Kunde("", 0);
+
+        model.addAttribute("kunde", tempKunde);
+        
         return "netflix-tarifrechner";
     }
 
     @PostMapping("/tarif-rechner")
     public String greetingSubmit(@ModelAttribute Kunde kunde, Model model) {
-        model.addAttribute("kunde", kunde);
+        Kunde newKunde = new Kunde(kunde.getName(), kunde.getAlter());
+        double calculatePreis = netflixTarifRechnerService.calculatePreis(newKunde);
 
-        double calculatePreis = netflixTarifRechnerService.calculatePreis(new Kunde(kunde.getName(), kunde.getAlter()));
-
+        model.addAttribute("kunde", newKunde);
         model.addAttribute("preis", calculatePreis);
 
         return "netflix-tarifrechner-result";
