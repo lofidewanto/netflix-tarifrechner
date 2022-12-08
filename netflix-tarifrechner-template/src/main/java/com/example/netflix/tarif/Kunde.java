@@ -22,7 +22,7 @@ public class Kunde {
         // TODO: Rabatt ist vom Alter abhängig
         // < 18 --  0
         // < 65 --  10
-        // > 65 --  20
+        // >= 65 --  20
 
         return 0;
     }
