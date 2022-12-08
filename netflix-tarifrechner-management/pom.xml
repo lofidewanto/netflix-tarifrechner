@@ -9,5 +9,6 @@
         <module>netflix-tarifrechner-api</module>
         <module>netflix-tarifrechner-server</module>
         <module>netflix-tarifrechner-server-jpa</module>
+        <module>netflix-tarifrechner-server-jpa-web</module>
     </modules>
 </project>
