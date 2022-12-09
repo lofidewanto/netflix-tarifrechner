@@ -8,7 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -28,8 +29,9 @@ class NetflixTarifrechnerRestControllerTest {
 
 	@Autowired
 	WebClient.Builder webClientBuilder;
-
+	
 	@Test
+	@WithMockUser(value = "test")
 	void webClientAufruf() {
 		WebClient webClient = webClientBuilder.baseUrl(HOST_TO_TEST + port + URL_TO_TEST).build();
 		String body = webClient.get().uri(URI_TO_TEST).retrieve().bodyToMono(String.class).block();
