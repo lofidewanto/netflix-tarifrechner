@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.transaction.annotation.Transactional;
 
 @DataJpaTest
 public class KundeRepositoryTest {
@@ -15,6 +16,7 @@ public class KundeRepositoryTest {
     KundeRepository kundeRepository;
 
     @Test
+    @Transactional
     void createTestKunde() {
         Kunde save = kundeRepository.save(new Kunde("Lofi", 20));
 
