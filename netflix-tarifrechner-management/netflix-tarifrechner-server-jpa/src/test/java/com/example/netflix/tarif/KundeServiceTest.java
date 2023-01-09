@@ -16,11 +16,9 @@ class KundeServiceTest {
     @Autowired
     KundeRepository kundeRepository;
     
-    @Disabled
+    @Disabled("Assert funktioniert in GitHub Action nicht!")
     @Test
     void create_Kunde() {
-        kundeRepository.deleteAll();
-
         Kunde createKunde1 = kundeService.createKunde(new Kunde("Max", 18));
         Kunde createKunde2 = kundeService.createKunde(new Kunde("Muster", 30));
 
