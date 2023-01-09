@@ -15,6 +15,9 @@ public class Kunde {
     private String name;
     private int alter;
 
+    public Kunde() {
+    }
+
     public Kunde(String name, int alter) {
         this.name = name;
         this.alter = alter;
