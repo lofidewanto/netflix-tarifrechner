@@ -68,7 +68,7 @@
 
 		<dependency>
 			<groupId>com.example</groupId>
-			<artifactId>netflix-tarifrechner-shared</artifactId>
+			<artifactId>netflix-tarifrechner-management-shared</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 
