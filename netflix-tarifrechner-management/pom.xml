@@ -6,10 +6,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>netflix-tarifrechner-shared</module>
-        <module>netflix-tarifrechner-server</module>
-        <module>netflix-tarifrechner-server-jpa</module>
-        <module>netflix-tarifrechner-server-jpa-web</module>
-        <module>netflix-tarifrechner-server-jpa-web-security</module>
+        <module>netflix-tarifrechner-management-shared</module>
+        <module>netflix-tarifrechner-management-server</module>
+        <module>netflix-tarifrechner-management-server-jpa</module>
+        <module>netflix-tarifrechner-management-server-jpa-web</module>
+        <module>netflix-tarifrechner-management-server-jpa-web-security</module>
     </modules>
 </project>
