@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -20,8 +20,7 @@ class NetflixTarifrechnerRestControllerTest {
 
 	private static final String URL_TO_TEST = "/netflix/";
 
-	private static final String URI_TO_TEST = NetflixTarifRechnerEndpoint.TARIFRECHNER
-			+ "/Lofi/18";
+	private static final String URI_TO_TEST = NetflixTarifRechnerEndpoint.TARIFRECHNER + "/Lofi/18";
 
 	@LocalServerPort
 	int port;
@@ -30,7 +29,7 @@ class NetflixTarifrechnerRestControllerTest {
 	WebClient.Builder webClientBuilder;
 
 	@Test
-	void webClientAufruf() {
+	void webClient_string_aufruf() {
 		WebClient webClient = webClientBuilder.baseUrl(HOST_TO_TEST + port + URL_TO_TEST).build();
 		String body = webClient.get().uri(URI_TO_TEST).retrieve().bodyToMono(String.class).block();
 
@@ -39,5 +38,15 @@ class NetflixTarifrechnerRestControllerTest {
 		String expectation = "{\"endPreis\":80.0,\"kundeName\":\"Lofi\"}";
 
 		assertEquals(expectation, body);
+	}
+
+	@Test
+	void webClient_dto_aufruf() {
+		WebClient webClient = webClientBuilder.baseUrl(HOST_TO_TEST + port + URL_TO_TEST).build();
+		TarifDto body = webClient.get().uri(URI_TO_TEST).retrieve().bodyToMono(TarifDto.class).block();
+
+		logger.info(body.getKundeName() + " - " + body.getEndPreis());
+
+		assertEquals(body.getKundeName(), "Lofi");
 	}
 }

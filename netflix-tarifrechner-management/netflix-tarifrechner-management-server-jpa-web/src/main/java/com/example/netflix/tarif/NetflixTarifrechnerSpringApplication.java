@@ -26,7 +26,7 @@ public class NetflixTarifrechnerSpringApplication {
 	}
 
 	@Bean
-	OpenAPI customOpenAPI(@Value("1.0.0") String appVersion) {
+	OpenAPI customOpenAPI(@Value("${netflix.api.version}") String appVersion) {
 		return new OpenAPI().components(new Components()).info(new Info().title("Netflix Tarif API").version(appVersion)
 				.license(new License().name("Apache 2.0").url("http://springdoc.org")));
 	}
