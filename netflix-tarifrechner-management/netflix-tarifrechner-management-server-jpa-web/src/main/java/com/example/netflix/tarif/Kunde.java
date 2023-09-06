@@ -40,4 +40,12 @@ public class Kunde {
             return 30;
         }
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAlter(int alter) {
+        this.alter = alter;
+    }
 }
