@@ -6,10 +6,24 @@ Webapp:
 
 H2 Console: http://localhost:8080/netflix/h2-console/
 
-### Reference Documentation
-For further reference, please consider the following sections:
+# Change to Spring Boot 3.1.x
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.7/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.7/maven-plugin/reference/html/#build-image)
+- Use OpenRewrite: https://docs.openrewrite.org/running-recipes/popular-recipe-guides/migrate-to-spring-3
 
+- Change the WebSecurityConfig:
+
+  @Bean
+  SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector) throws Exception {
+  MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector).servletPath("/");
+  	http.authorizeHttpRequests(
+  			(requests) -> requests.requestMatchers(mvcMatcherBuilder.pattern("/greeting")).permitAll().anyRequest().authenticated())
+  			.formLogin((form) -> form.loginPage("/login").permitAll()).logout((logout) -> logout.permitAll());
+
+  	return http.build();
+  }
+
+  Problem with 2 servlets: Spring and H2 servlets
+  See: https://github.com/spring-projects/spring-security/issues/13568
+
+- remoteUser problem: 
+  <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
