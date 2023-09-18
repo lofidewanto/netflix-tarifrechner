@@ -29,3 +29,6 @@ H2 Console: http://localhost:8080/netflix/h2-console/
 
 - remoteUser problem: 
   <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+  Thymeleaf 3.1 no longer provides access to HttpServletRequest 
+  so HttpServletRequest#getRemoteUser() cannot be used to access the currently authenticated user.
