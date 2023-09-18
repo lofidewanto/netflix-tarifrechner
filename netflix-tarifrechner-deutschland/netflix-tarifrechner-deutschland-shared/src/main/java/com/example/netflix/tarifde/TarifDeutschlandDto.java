@@ -1,12 +1,17 @@
-package com.example.netflix.tarif;
+package com.example.netflix.tarifde;
 
-public class TarifDto {
+public class TarifDeutschlandDto {
 
     private final double endPreis;
 
     private final String kundeName;
 
-    public TarifDto(double endPreis, String kundeName) {
+    public TarifDeutschlandDto() {
+        endPreis = 0;
+        kundeName = "";
+    }
+
+    public TarifDeutschlandDto(double endPreis, String kundeName) {
         this.endPreis = endPreis;
         this.kundeName = kundeName;
     }

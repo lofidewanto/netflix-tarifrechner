@@ -23,4 +23,5 @@ public class TarifDto {
 	public String getKundeName() {
 		return kundeName;
 	}
+
 }
