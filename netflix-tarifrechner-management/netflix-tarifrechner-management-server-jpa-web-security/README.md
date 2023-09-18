@@ -1,8 +1,10 @@
 # Getting Started
 Webapp: 
-- http://localhost:8080/netflix/v1/tarifrechner/lofi/20
-- http://localhost:8080/netflix/greeting?name=Lofi 
-- http://localhost:8080/netflix/tarif-rechner
+- http://localhost:8080/netflix/ --> index.html
+- http://localhost:8080/netflix/v1/tarifrechner/lofi/20 --> REST/JSON
+- http://localhost:8080/netflix/greeting?name=Lofi  --> greeting.html
+- http://localhost:8080/netflix/login --> login.html
+- http://localhost:8080/netflix/tarif-rechner --> netflix-tarifrechner.html
 
 H2 Console: http://localhost:8080/netflix/h2-console/
 
