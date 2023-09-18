@@ -5,7 +5,9 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 @Configuration
 public class MvcConfig {
-    
+
+	// Spring Boot Auto Configuration without @EnableWebMvc
+	// This is just an example and won't be used in this web app.
     public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/home").setViewName("greeting");
 		registry.addViewController("/").setViewName("greeting");
