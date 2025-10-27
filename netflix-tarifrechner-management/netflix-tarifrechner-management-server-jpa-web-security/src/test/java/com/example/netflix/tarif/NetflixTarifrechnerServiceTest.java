@@ -1,11 +1,11 @@
 package com.example.netflix.tarif;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class NetflixTarifrechnerServiceTest {
-    
+
     @Test
     void calculatePreis_Max_18JahreAlt() {
         Kunde kunde = new Kunde("Max", 18);

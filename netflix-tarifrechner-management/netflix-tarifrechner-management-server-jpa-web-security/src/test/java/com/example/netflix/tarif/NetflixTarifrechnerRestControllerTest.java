@@ -1,7 +1,5 @@
 package com.example.netflix.tarif;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -13,35 +11,37 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class NetflixTarifrechnerRestControllerTest {
 
-	private static final Logger logger = LoggerFactory.getLogger(NetflixTarifrechnerRestControllerTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(NetflixTarifrechnerRestControllerTest.class);
 
-	private static final String HOST_TO_TEST = "http://localhost:";
+    private static final String HOST_TO_TEST = "http://localhost:";
 
-	private static final String URL_TO_TEST = "/netflix/";
+    private static final String URL_TO_TEST = "/netflix/";
 
-	private static final String URI_TO_TEST = NetflixTarifRechnerEndpoint.TARIFRECHNER
-			+ "/Lofi/18";
+    private static final String URI_TO_TEST = NetflixTarifRechnerEndpoint.TARIFRECHNER
+            + "/Lofi/18";
 
-	@LocalServerPort
-	int port;
+    @LocalServerPort
+    int port;
 
-	@Autowired
-	WebClient.Builder webClientBuilder;
-	
-	@Disabled("Still error on this test")
-	@Test
-	@WithMockUser(value = "test")
-	void webClientAufruf() {
-		WebClient webClient = webClientBuilder.baseUrl(HOST_TO_TEST + port + URL_TO_TEST).build();
-		String body = webClient.get().uri(URI_TO_TEST).retrieve().bodyToMono(String.class).block();
+    @Autowired
+    WebClient.Builder webClientBuilder;
 
-		logger.info(body);
+    @Disabled("Still error on this test")
+    @Test
+    @WithMockUser(value = "test")
+    void webClientAufruf() {
+        WebClient webClient = webClientBuilder.baseUrl(HOST_TO_TEST + port + URL_TO_TEST).build();
+        String body = webClient.get().uri(URI_TO_TEST).retrieve().bodyToMono(String.class).block();
 
-		String expectation = "{\"endPreis\":80.0,\"kundeName\":\"Lofi\"}";
+        logger.info(body);
 
-		assertEquals(expectation, body);
-	}
+        String expectation = "{\"endPreis\":80.0,\"kundeName\":\"Lofi\"}";
+
+        assertEquals(expectation, body);
+    }
 }

@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class GreetingWebController {
 
-	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
-			Model model) {
-		model.addAttribute("name", name);
-		model.addAttribute("alter", 11);
+    @GetMapping({"/", "/greeting"})
+    public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+                           Model model) {
+        model.addAttribute("name", name);
+        model.addAttribute("alter", 11);
 
-		return "greeting";
-	}
+        return "greeting";
+    }
 
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

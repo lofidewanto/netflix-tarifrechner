@@ -17,19 +17,19 @@ public class WebSecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(requests -> requests
-                .requestMatchers("/", "/greeting", "/actuator/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .formLogin(form -> form
-                .loginPage("/login")
-                .defaultSuccessUrl("/netflix-tarifrechner")
-                .permitAll()
-            )
-            .logout(logout -> logout
-                .permitAll()
-                .logoutSuccessUrl("/"));
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/", "/greeting", "/actuator/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/netflix-tarifrechner")
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .permitAll()
+                        .logoutSuccessUrl("/"));
 
         return http.build();
     }
@@ -37,10 +37,10 @@ public class WebSecurityConfig {
     @Bean
     UserDetailsService userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
-            .username("test")
-            .password("test")
-            .roles("USER")
-            .build();
+                .username("test")
+                .password("test")
+                .roles("USER")
+                .build();
 
         return new InMemoryUserDetailsManager(user);
     }

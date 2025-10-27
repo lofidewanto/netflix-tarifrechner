@@ -26,7 +26,7 @@ public class NetflixTarifRechnerRestController {
         Kunde createdKunde = kundeService.createKunde(new Kunde(name, alter));
 
         double endPreis = netflixTarifRechnerService.calculatePreis(createdKunde);
-        
+
         logger.info("Preis am Ende: {}", endPreis);
         logger.info("Kunde: {}", createdKunde);
 

@@ -1,11 +1,11 @@
 package com.example.netflix.tarif;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class KundeServiceTest {
@@ -15,7 +15,7 @@ class KundeServiceTest {
 
     @Autowired
     KundeRepository kundeRepository;
-    
+
     @Test
     @Disabled("Assert funktioniert in GitHub Action nicht!")
     void create_Kunde() {

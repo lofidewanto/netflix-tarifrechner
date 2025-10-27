@@ -8,14 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class NetflixTarifrechnerSpringApplication {
 
-	private static final Logger logger = LoggerFactory.getLogger(NetflixTarifrechnerSpringApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(NetflixTarifrechnerSpringApplication.class);
 
-	public static void main(String[] args) {
-		logger.info("STARTING THE APPLICATION");
+    public static void main(String[] args) {
+        logger.info("STARTING THE APPLICATION");
 
-		SpringApplication.run(NetflixTarifrechnerSpringApplication.class, args);
+        SpringApplication.run(NetflixTarifrechnerSpringApplication.class, args);
 
-		logger.info("STOP THE APPLICATION");
-	}
+        logger.info("STOP THE APPLICATION");
+    }
 
 }
