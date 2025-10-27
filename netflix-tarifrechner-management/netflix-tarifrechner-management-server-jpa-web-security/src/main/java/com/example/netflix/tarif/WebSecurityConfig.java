@@ -17,13 +17,11 @@ public class WebSecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((request) -> {
-                    request.antMatchers("/", "/greeting").permitAll();
-                    request.anyRequest().authenticated();
+                    request.requestMatchers("/", "/greeting").permitAll()
+                          .anyRequest().authenticated();
                 })
-                .formLogin((form) -> {
-                    form.loginPage("/login").permitAll();
-                })
-                .logout((logout) -> {
+                .formLogin(form -> form.loginPage("/login").permitAll())
+                .logout(logout -> {
                     logout.permitAll();
                     logout.logoutSuccessUrl("/");
                 });
