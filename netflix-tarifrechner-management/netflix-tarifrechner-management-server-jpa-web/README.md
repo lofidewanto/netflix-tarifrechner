@@ -6,7 +6,7 @@ Webapp:
 
 H2 Console: http://localhost:8080/netflix/h2-console/
 
-OpenAPI: http://localhost:8080/netflix/swagger-ui.html
+OpenAPI: http://localhost:8080/netflix/swagger-ui/index.html
 
 ### Reference Documentation
 For further reference, please consider the following sections:
