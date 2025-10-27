@@ -1,22 +1,22 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>Netflix Tarifrechner</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <h1>Form</h1>
-    <form action="#" th:action="@{/tarif-rechner}" th:object="${kunde}" method="post">
+    <h1>Willkommen <span sec:authentication="name"></span>!</h1>
+    <form th:action="@{/netflix-tarifrechner}" th:object="${kunde}" method="post">
         <p>Name: <input type="text" th:field="*{name}" /></p>
         <p>Alter: <input type="text" th:field="*{alter}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" value="Berechnen" /> <input type="reset" value="Zurücksetzen" /></p>
+    </form>
 
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Abmelden"/>
     </form>
 </body>
 

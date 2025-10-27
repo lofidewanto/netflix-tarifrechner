@@ -13,24 +13,17 @@ public class NetflixTarifRechnerWebController {
     @Autowired
     private NetflixTarifRechnerService netflixTarifRechnerService;
 
-    @GetMapping("/tarif-rechner")
-    public String greetingForm(Model model) {
-        Kunde tempKunde = new Kunde("", 0);
-
-        model.addAttribute("kunde", tempKunde);
-        
+    @GetMapping("/netflix-tarifrechner")
+    public String showTarifRechner(Model model) {
+        model.addAttribute("kunde", new Kunde("", 0));
         return "netflix-tarifrechner";
     }
 
-    @PostMapping("/tarif-rechner")
-    public String greetingSubmit(@ModelAttribute Kunde kunde, Model model) {
-        Kunde newKunde = new Kunde(kunde.getName(), kunde.getAlter());
-        double calculatePreis = netflixTarifRechnerService.calculatePreis(newKunde);
-
-        model.addAttribute("kunde", newKunde);
+    @PostMapping("/netflix-tarifrechner")
+    public String submitTarifRechner(@ModelAttribute Kunde kunde, Model model) {
+        double calculatePreis = netflixTarifRechnerService.calculatePreis(kunde);
+        model.addAttribute("kunde", kunde);
         model.addAttribute("preis", calculatePreis);
-
         return "netflix-tarifrechner-result";
     }
-
 }

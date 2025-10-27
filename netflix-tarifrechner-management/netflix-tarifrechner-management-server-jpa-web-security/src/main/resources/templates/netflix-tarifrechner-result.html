@@ -1,17 +1,22 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>Netflix Tarifrechner - Ergebnis</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
-    <h1>Result</h1>
+    <h1>Ergebnis für <span sec:authentication="name"></span></h1>
     <p th:text="'Name: ' + ${kunde.name}" />
     <p th:text="'Alter: ' + ${kunde.alter}" />
-    <p th:text="'Preis: ' + ${preis}" />
-    <a href="tarif-rechner">Submit another message</a>
+    <p th:text="'Preis: ' + ${preis} + ' €'" />
+    <a href="/netflix/netflix-tarifrechner">Neue Berechnung</a>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Abmelden"/>
+    </form>
 </body>
 
 </html>
